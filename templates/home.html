@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Prediction</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto mt-10">
+        <div class="max-w-md mx-auto bg-white p-8 rounded-lg shadow-md">
+            <h1 class="text-2xl font-bold text-center mb-4">Temperature Prediction</h1>
+            <form action="/predict" method="post" class="space-y-4">
+                <div>
+                    <label for="latitude" class="block text-sm font-medium">Latitude</label>
+                    <input type="number" step="any" id="latitude" name="latitude" class="w-full mt-1 p-2 border rounded-md" required>
+                </div>
+                <div>
+                    <label for="longitude" class="block text-sm font-medium">Longitude</label>
+                    <input type="number" step="any" id="longitude" name="longitude" class="w-full mt-1 p-2 border rounded-md" required>
+                </div>
+                <div>
+                    <label for="humidity" class="block text-sm font-medium">Humidity (%)</label>
+                    <input type="number" step="any" id="humidity" name="humidity" class="w-full mt-1 p-2 border rounded-md" required>
+                </div>
+                <div>
+                    <label for="wind_kph" class="block text-sm font-medium">Wind Speed (kph)</label>
+                    <input type="number" step="any" id="wind_kph" name="wind_kph" class="w-full mt-1 p-2 border rounded-md" required>
+                </div>
+                <div>
+                    <label for="pressure_mb" class="block text-sm font-medium">Pressure (mb)</label>
+                    <input type="number" step="any" id="pressure_mb" name="pressure_mb" class="w-full mt-1 p-2 border rounded-md" required>
+                </div>
+                <div>
+                    <label for="precip_mm" class="block text-sm font-medium">Precipitation (mm)</label>
+                    <input type="number" step="any" id="precip_mm" name="precip_mm" class="w-full mt-1 p-2 border rounded-md" required>
+                </div>
+                <div>
+                    <label for="wind_direction" class="block text-sm font-medium">Wind Direction</label>
+                    <select id="wind_direction" name="wind_direction" class="w-full mt-1 p-2 border rounded-md" required>
+                        <option value="E">E</option>
+                        <option value="ENE">ENE</option>
+                        <option value="ESE">ESE</option>
+                        <option value="N">N</option>
+                        <option value="NE">NE</option>
+                        <option value="NNE">NNE</option>
+                        <option value="NNW">NNW</option>
+                        <option value="NW">NW</option>
+                        <option value="S">S</option>
+                        <option value="SE">SE</option>
+                        <option value="SSE">SSE</option>
+                        <option value="SSW">SSW</option>
+                        <option value="SW">SW</option>
+                        <option value="W">W</option>
+                        <option value="WNW">WNW</option>
+                        <option value="WSW">WSW</option>
+                    </select>
+                </div>
+                <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600">Predict</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
